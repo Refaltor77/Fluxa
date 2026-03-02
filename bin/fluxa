@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+];
+
+foreach ($autoloadPaths as $path) {
+    if (file_exists($path)) {
+        require $path;
+        break;
+    }
+}
+
+use Fluxa\CLI\Console;
+use Fluxa\CLI\Commands\ServeCommand;
+use Fluxa\CLI\Commands\InstallCommand;
+use Fluxa\CLI\Commands\MakeControllerCommand;
+use Fluxa\CLI\Commands\MakeMiddlewareCommand;
+use Fluxa\CLI\Commands\ConfigCommand;
+
+$console = new Console();
+
+$console->register(new InstallCommand());
+$console->register(new ServeCommand());
+$console->register(new MakeControllerCommand());
+$console->register(new MakeMiddlewareCommand());
+$console->register(new ConfigCommand('get'));
+$console->register(new ConfigCommand('set'));
+
+exit($console->run($argv));
