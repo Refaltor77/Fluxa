@@ -19,13 +19,20 @@ Fluxa is a modern micro-framework designed for building JSON APIs with extreme s
 
 ## Installation
 
+### New project (recommended)
+
 ```bash
-composer require fluxa/fluxa
+composer create-project fluxa/skeleton my-api
+cd my-api
+composer serve
 ```
 
-Initialize a new project:
+This creates a ready-to-use project with routing, a controller, CORS middleware, and configuration — similar to `laravel new`.
+
+### Add to existing project
 
 ```bash
+composer require fluxa/fluxa
 vendor/bin/fluxa install
 ```
 

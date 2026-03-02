@@ -21,10 +21,12 @@ use Fluxa\CLI\Commands\InstallCommand;
 use Fluxa\CLI\Commands\MakeControllerCommand;
 use Fluxa\CLI\Commands\MakeMiddlewareCommand;
 use Fluxa\CLI\Commands\ConfigCommand;
+use Fluxa\CLI\Commands\InstallSkeletonCommand;
 
 $console = new Console();
 
 $console->register(new InstallCommand());
+$console->register(new InstallSkeletonCommand());
 $console->register(new ServeCommand());
 $console->register(new MakeControllerCommand());
 $console->register(new MakeMiddlewareCommand());

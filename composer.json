@@ -1,6 +1,7 @@
 {
     "name": "fluxa/fluxa",
     "description": "Ultra-minimalist, high-performance API micro-framework for PHP 8.3+",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "keywords": ["framework", "api", "micro-framework", "rest", "json", "php8"],
